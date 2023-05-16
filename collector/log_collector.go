@@ -10,7 +10,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/satyrius/gonx"
 
-	"github.com/songjiayang/nginxlog-exporter/config"
+	"github.com/manaphp/nginxlog-exporter/config"
 )
 
 // Collector is a struct containing pointers to all metrics that should be

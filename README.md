@@ -14,8 +14,8 @@ A Exporter to parse Nginx/gin request log to Prometheus metrics.
 
 ## Installation
 
-1. go get `github.com/songjiayang/nginxlog-exporter`
-2. Or use [binary](https://github.com/songjiayang/nginxlog-exporter/releases) release
+1. go get `github.com/manaphp/nginxlog-exporter`
+2. Or use [binary](https://github.com/manaphp/nginxlog-exporter/releases) release
 
 ## Usage
 

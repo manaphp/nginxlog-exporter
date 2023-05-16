@@ -1,4 +1,4 @@
-module github.com/songjiayang/nginxlog-exporter
+module github.com/manaphp/nginxlog-exporter
 
 go 1.18
 
