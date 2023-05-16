@@ -139,7 +139,11 @@ func (c *Collector) formatValue(label, value string) string {
 	for _, target := range replacement.Replaces {
 		if target.Regexp().MatchString(value) {
 			if target.Value == "" {
-				return target.Regexp().ReplaceAllString(value, "$1")
+				if strings.Contains(target.Target, "(") {
+					return target.Regexp().ReplaceAllString(value, "$1")
+				} else {
+					return strings.Trim(target.Target, "/")
+				}
 			} else {
 				return target.Regexp().ReplaceAllString(value, target.Value)
 			}
