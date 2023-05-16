@@ -93,6 +93,10 @@ func (c *Collector) Run() {
 
 		go func() {
 			for line := range t.Lines {
+				if line.Text == "" {
+					continue
+				}
+
 				entry, err := c.parser.ParseString(line.Text)
 				if err != nil {
 					fmt.Printf("error while parsing line '%s': %s", line.Text, err)
