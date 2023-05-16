@@ -9,9 +9,9 @@ if [ $# != 1 ]; then
 fi
 
 # prepare folders
-rm -rf nginx-log-exporter && mkdir nginx-log-exporter
-cp -r test nginx-log-exporter/test
-cp config.yml nginx-log-exporter
+rm -rf nginxlog-exporter && mkdir nginxlog-exporter
+cp -r test nginxlog-exporter/test
+cp config.yml nginxlog-exporter
 
 declare -a os=(
 "darwin"
@@ -32,7 +32,7 @@ declare -a arches=(
 len=${#os[@]}
 for (( i=1; i<${len}+1; i++ ));
 do
-  echo "--> building nginx-log-exporter_$1_${os[$i-1]}_${arches[$i-1]}"
-  GOOS="${os[$i-1]}" GOARCH="${arches[$i-1]}" go build -a -o nginx-log-exporter/nginx-log-exporter main.go
-  tar cvzf "pkg/nginx-log-exporter_$1_${os[$i-1]}_${arches[$i-1]}.tar.gz" nginx-log-exporter
+  echo "--> building nginxlog-exporter_$1_${os[$i-1]}_${arches[$i-1]}"
+  GOOS="${os[$i-1]}" GOARCH="${arches[$i-1]}" go build -a -o nginxlog-exporter/nginxlog-exporter main.go
+  tar cvzf "pkg/nginxlog-exporter_$1_${os[$i-1]}_${arches[$i-1]}.tar.gz" nginxlog-exporter
 done

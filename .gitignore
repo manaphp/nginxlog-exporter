@@ -1,4 +1,4 @@
 pkg
 vendor
-nginx-log-exporter
+nginxlog-exporter
 .idea

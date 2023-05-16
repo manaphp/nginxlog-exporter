@@ -9,8 +9,8 @@ import (
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
-	"github.com/songjiayang/nginx-log-exporter/collector"
-	"github.com/songjiayang/nginx-log-exporter/config"
+	"github.com/songjiayang/nginxlog-exporter/collector"
+	"github.com/songjiayang/nginxlog-exporter/config"
 )
 
 var (
