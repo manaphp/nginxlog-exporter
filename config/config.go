@@ -90,11 +90,15 @@ func (rt *ReplaceTarget) Regexp() *regexp.Regexp {
 }
 
 func (rt *ReplaceTarget) prepare() {
-	if !strings.HasPrefix(rt.Target, "^") {
-		rt.Target = "^" + rt.Target + ".*"
+	var target string
+
+	if strings.HasPrefix(rt.Target, "^") {
+		target = rt.Target
+	} else {
+		target = "^" + rt.Target + ".*"
 	}
 
-	replace, err := regexp.Compile(rt.Target)
+	replace, err := regexp.Compile(target)
 	if err != nil {
 		log.Panic(err)
 	}
