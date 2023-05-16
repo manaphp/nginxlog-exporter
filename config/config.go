@@ -90,6 +90,10 @@ func (rt *ReplaceTarget) Regexp() *regexp.Regexp {
 }
 
 func (rt *ReplaceTarget) prepare() {
+	if !strings.HasPrefix(rt.Target, "^") {
+		rt.Target = "^" + rt.Target + ".*"
+	}
+
 	replace, err := regexp.Compile(rt.Target)
 	if err != nil {
 		log.Panic(err)
