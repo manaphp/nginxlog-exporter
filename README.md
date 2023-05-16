@@ -26,7 +26,7 @@ Usage of:
   -config.file string
     	Nginx log exporter configuration file name. (default "config.yml")
   -web.listen-address string
-    	Address to listen on for the web interface and API. (default ":9999")
+    	Address to listen on for the web interface and API. (default ":9147")
 exit status 2
 ```
 
